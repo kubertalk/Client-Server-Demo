@@ -69,7 +69,8 @@ int socket_server_init(int port_number)
 
 	memset(&ser_addr, 0, sizeof(ser_addr));
 	ser_addr.sin_family = AF_INET;
-	ser_addr.sin_addr.s_addr = inet_addr(SERVER_IP_FIX);//htonl(INADDR_ANY); // 
+	//ser_addr.sin_addr.s_addr = inet_addr("127.0.0.1");//htonl(INADDR_ANY); // 
+	ser_addr.sin_addr.s_addr = htonl(SERVER_IP_FIX);
 	ser_addr.sin_port = htons(port_number);  //
 
 	ret = bind(server_fd, (struct sockaddr*)&ser_addr, sizeof(ser_addr));
@@ -128,8 +129,8 @@ int socket_client_init(socket_entry* client, int server_port_num)
 	
 	memset(&ser_addr, 0, sizeof(ser_addr));
 	ser_addr.sin_family = AF_INET;
-	//ser_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); //htonl(INADDR_ANY); //
-	ser_addr.sin_addr.s_addr = htonl(SERVER_IP_FIX);  //
+	ser_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); //htonl(INADDR_ANY); //
+	//ser_addr.sin_addr.s_addr = htonl(INADDR_ANY);  //
 	ser_addr.sin_port = htons(server_port_num);  //
 
 	client->sock_fd = client_fd;
