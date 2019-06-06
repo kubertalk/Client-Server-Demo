@@ -50,16 +50,17 @@ int cmd_task_start_handler(socket_entry* entry,char* buf)
 	char recv_buf[BUFF_LEN];
 
 	script = &(cmd->cmd_content.script);
+	printf("%s\n", script->file_name);
 	if (script && script->script_len){
 			socket_send_ack(entry,CMD_ACK);
 			left_length = script->script_len;
 			printf("script file: %s, len:%d\n",script->file_name,script->script_len);
 			while(left_length ) {
-				recv_len = socket_recv(entry, recv_buf,(left_length<BUFF_LEN)? (left_length):(BUFF_LEN));
-				script_file_save(recv_buf);
-				left_length -= recv_len;
-				printf("%s", recv_buf);
-			}
+					recv_len = socket_recv(entry, recv_buf,(left_length<BUFF_LEN)? (left_length):(BUFF_LEN));
+					script_file_save(recv_buf);
+					left_length -= recv_len;
+					printf("%s", recv_buf);
+				}
 			printf("\n");
 			socket_send_ack(entry, DATA_ACK);
 	}

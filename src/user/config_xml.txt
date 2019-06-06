@@ -1,0 +1,13 @@
+<Test task_id="6666">
+    <cfg value="1" />
+    <resource_dir value="C:\HCI\Resources" />
+    <output_dir value="C:\HCI\Output" />
+    <estimated_runtime value="8" />
+    <board name="SV In A Box">
+        <cfgfile value="\\cd-pc66\svshare\a3900\Wifi\env\Scripts\Siab.py" />
+        <bin path="\\cd-pc66\svshare\a3900\Wifi\focus\usb_host\bin-cortexa53\ca53-aarch64_usb_host.bin" cmdline="0 8 0 0 usb start" type="xscale" />
+    </board>
+    <properties>
+        
+    </properties>
+</Test>

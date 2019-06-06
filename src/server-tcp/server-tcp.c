@@ -18,9 +18,11 @@ int server_cmds_handler(socket_entry* entry,void* cmd_buf)
 		cmd_agent_register_handler(entry,cmd_buf);
 		break;
 	case CMD_TASK_START:
+	//case 0x1:
 		/*1. receive script file*/
 		/*2. find agent*/
 		/*3. run task on agent*/
+		printf("%x\n,", cmd->cmd);
 		cmd_task_start_handler(entry,cmd_buf);
 		break;
 	case CMD_TASK_STATUS:
@@ -40,7 +42,7 @@ int server_cmds_handler(socket_entry* entry,void* cmd_buf)
 void main(void)
 {
 	socket_entry server;
-	server.sock_fd=socket_server_init(SERVER_PORT_AUTO);
+	server.sock_fd=socket_server_init(8087);
 	
 	/*wait for cmds*/
 	printf("wait for cmds\n");

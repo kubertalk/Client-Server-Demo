@@ -38,6 +38,9 @@ void handle_tcp_msg(socket_entry* entry)
 			printf("error\n");
 			break;
 		}
+		printf("auto_cmd size is %ld\n",sizeof(struct auto_cmd));
+		//printf("agent_info size is %ld\n",sizeof(struct agent_info));
+		printf("agent_cmd_script size is %ld\n",sizeof(struct agent_cmd_script));
 		printf("packet come in, len is %d\n",len);
 		if(entry->socket_cmd_handler)
 			entry->socket_cmd_handler(entry,buf);
@@ -69,8 +72,8 @@ int socket_server_init(int port_number)
 
 	memset(&ser_addr, 0, sizeof(ser_addr));
 	ser_addr.sin_family = AF_INET;
-	//ser_addr.sin_addr.s_addr = inet_addr("127.0.0.1");//htonl(INADDR_ANY); // 
-	ser_addr.sin_addr.s_addr = htonl(SERVER_IP_FIX);
+	ser_addr.sin_addr.s_addr = inet_addr("10.25.130.102");//htonl(INADDR_ANY); // 
+	//ser_addr.sin_addr.s_addr = htonl(SERVER_IP_FIX);
 	ser_addr.sin_port = htons(port_number);  //
 
 	ret = bind(server_fd, (struct sockaddr*)&ser_addr, sizeof(ser_addr));
@@ -94,6 +97,7 @@ void socket_server_start(socket_entry* server)
 		return;
 	}
 	while(1){
+		printf("Listening To Client...\n");
 		pthread_t thread;
 		int client_fd = 0;
 		struct sockaddr_in caddr;
@@ -108,7 +112,7 @@ void socket_server_start(socket_entry* server)
 			client->inet_addr = caddr;
 			printf("accepted %d \n",client->sock_fd);
 			client->socket_cmd_handler = server_cmds_handler;
-			//socket_recv(client,buf);
+			//socket_recv(client,buf,BUFF_LEN);
 			pthread_create(&thread,NULL,server_routine,(void *)client);
 		}
 	}
