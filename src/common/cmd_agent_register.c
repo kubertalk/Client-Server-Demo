@@ -39,10 +39,6 @@ void cmd_agent_register(socket_entry* agent)
 	agent_register_check_ack(CMD_AGENT_REGISTER,NULL,buf);
 }
 
-void script_file_save(char* buf)
-{
-	/*save to file*/
-}
 
 /*side B: handle cmd agent register*/
 int cmd_agent_register_handler(socket_entry* entry,char* buf)

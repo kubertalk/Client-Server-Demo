@@ -72,6 +72,8 @@ int socket_server_init(int port_number)
 
 	memset(&ser_addr, 0, sizeof(ser_addr));
 	ser_addr.sin_family = AF_INET;
+	//ser_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	//ser_addr.sin_addr.s_addr = inet_addr("172.17.0.1");
 	ser_addr.sin_addr.s_addr = inet_addr("10.25.130.102");//htonl(INADDR_ANY); // 
 	//ser_addr.sin_addr.s_addr = htonl(SERVER_IP_FIX);
 	ser_addr.sin_port = htons(port_number);  //

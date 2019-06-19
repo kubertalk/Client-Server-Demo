@@ -26,7 +26,8 @@ typedef struct sock_entry{
 }socket_entry;
 
 int socket_client_init(socket_entry* client, int server_port_num);
-
+int socket_send(socket_entry* entry, char* buf,int len);
+int socket_recv(socket_entry* entry, char* buf,int len);
 int socket_server_init(int port_number);
 void socket_server_start(socket_entry* server);
 

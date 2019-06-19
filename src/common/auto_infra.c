@@ -43,3 +43,8 @@ int socket_recv_ack(socket_entry* sock,char* buf )
 	return flag;
 }
 
+void script_file_save(char* buf)
+{
+	/*save to file*/
+	
+}

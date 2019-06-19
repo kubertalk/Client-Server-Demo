@@ -52,7 +52,7 @@ struct agent_cmd_script{
 struct auto_cmd {
 	int cmd;
 	union{
-		//struct agent_info info;
+		struct agent_info info;
 		struct agent_cmd_script script;
 	}cmd_content;
 };
