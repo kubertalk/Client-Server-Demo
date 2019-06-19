@@ -4,7 +4,7 @@
 #include "auto.h"
 
 #include "cmd_agent_register.h"
-#include "cmd_auto_start.h"
+#include "cmd_agent_auto_start.h"
 
 int agent_cmds_handler(socket_entry* entry,void* cmd_buf)
 {
@@ -12,10 +12,10 @@ int agent_cmds_handler(socket_entry* entry,void* cmd_buf)
 	
 	switch(cmd->cmd)
 	{
-	case CMD_AUTO_START:
-		cmd_auto_start_handler(entry,cmd_buf);
+	case CMD_AGENT_AUTO_START:
+		cmd_agent_auto_start_handler(entry,cmd_buf);
 		break;
-	case CMD_AUTO_PAUSE:
+	case CMD_AGENT_AUTO_PAUSE:
 	default:	
 		break;
 	}

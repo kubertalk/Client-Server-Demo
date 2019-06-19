@@ -20,14 +20,14 @@
 #define CMD_AGENT_DOWN		(CMD_SRC_AGENT|0x2)
 
 /*from user to server cmd*/
-#define CMD_TASK_START		(CMD_SRC_USER|0x1)
-#define CMD_TASK_STATUS	(CMD_SRC_USER|0x2)
-#define CMD_TASK_CANCEL	(CMD_SRC_USER|0x3)
-#define CMD_TASK_PAUSE		(CMD_SRC_USER|0x4)
+#define CMD_USER_TASK_START		(CMD_SRC_USER|0x1)
+#define CMD_USER_TASK_STATUS	(CMD_SRC_USER|0x2)
+#define CMD_USER_TASK_CANCEL	(CMD_SRC_USER|0x3)
+#define CMD_USER_TASK_PAUSE		(CMD_SRC_USER|0x4)
 
 /*from server to agent cmd*/
-#define CMD_AUTO_START		(CMD_SRC_SERVER|0x1)
-#define CMD_AUTO_PAUSE	(CMD_SRC_SERVER|0x5)
+#define CMD_AGENT_AUTO_START		(CMD_SRC_SERVER|0x1)
+#define CMD_AGENT_AUTO_PAUSE	(CMD_SRC_SERVER|0x5)
 
 /*from server to user cmds*/
 #define CMD_USER_PAUSE		(CMD_SRC_SERVER|0x1)

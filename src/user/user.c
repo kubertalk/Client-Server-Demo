@@ -3,7 +3,7 @@
 #include "socket_control.h"
 #include "auto.h"
 
-#include "cmd_task_start.h"
+#include "cmd_user_task_start.h"
 
 int user_cmds_handler(socket_entry* entry,void* cmd_buf)
 {
@@ -32,7 +32,7 @@ void main(void)
 	user_init(&user_socket);
 	strcpy(script.file_name,"config_xml.txt");
 	script.script_len = 108;
-	cmd_task_start(&user_socket,(char*)&script);
+	cmd_user_task_start(&user_socket,(char*)&script);
 	user_socket.socket_cmd_handler = user_cmds_handler;
 	user_socket.private = NULL;
 	

@@ -7,7 +7,7 @@ CC = gcc
 SOURCE = user.c
 SOURCE += ../common/socket_control.c
 SOURCE += ../common/auto_infra.c
-SOURCE += ../common/cmd_task_start.c
+SOURCE += ../common/cmd_user_task_start.c
 SOURCE += ../common/file_operation.c
 
 

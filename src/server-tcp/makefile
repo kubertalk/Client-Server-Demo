@@ -8,8 +8,8 @@ SOURCE = server-tcp.c
 SOURCE += ../common/cmd_agent_register.c
 SOURCE += ../common/socket_control.c
 SOURCE += ../common/auto_infra.c
-SOURCE += ../common/cmd_auto_start.c
-SOURCE += ../common/cmd_task_start.c
+SOURCE += ../common/cmd_agent_auto_start.c
+SOURCE += ../common/cmd_user_task_start.c
 
 
 

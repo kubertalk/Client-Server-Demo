@@ -1,0 +1,53 @@
+<Test>
+    <Agent>
+        <cfg value="1" />
+        <board name="SV In A Box">
+        <!-- Setup your config file and binaries with the appropriate command lines -->
+            <cfgfile value="$(CFG_PATH)" />
+            <bin path="$(BIN_PATH)" cmdline="0 0 0 10 -sel $(NVME_TESTS) -host $(HOST_NAME) -gen $(SPEED) -lane $(LANE)" type="cpu0" />
+        </board>
+        <properties>
+            <property name="DDR_TYPE" value="$(DDR_NAME)" />
+            <property name="PLL_SPEED" value="$(PLL_SPEED)" />
+            <property name="ENABLE_POWER_MEASUREMENT" value="stream" />
+	       <property name="SIAB0_OVERRIDE_STRAP" value="0x53" />
+        </properties>
+    </Agent>
+    <!-- This section defines the shmoo parameters -->
+    <Shmoo>
+        <shmoo desc=""/>
+        <parameters>
+            <parameter name="$(VDD_NAME)">
+                <range start="$(VDD_START)" end="$(VDD_END)" step="$(VDD_STEP)"/>
+            </parameter>
+            <parameter name="SetTemp">
+            	<value>$(SET_TEMP)</value>
+            </parameter>		  
+            <parameter name="SPEED">
+                <value>$(SPEED)</value>
+            </parameter>
+            <parameter name="LANE">
+                <value>$(LANE)</value>
+            </parameter>
+            <parameter name="YGF_ALL">
+                <value>$(YGF_ALL)</value>
+            </parameter>
+            <parameter name="YGF_NOTEMP">
+                <value>$(YGF_NOTEMP)</value>
+            </parameter>
+            <parameter name="STEP_ID">
+                <value>$(step_id)</value>
+            </parameter>
+            <parameter name="JOB_ID">
+                <value>$(job_id)</value>
+            </parameter>
+        </parameters>
+        <properties>
+          <!-- define which algorithm we are going to use for this run -->
+          <property name="Algorithm" value="$(ALGORITHM)" />
+          <property name="Repetitions" value="$(REPETITIONS)" />
+          <property name="FailLimit" value="$(FAIL_LIMIT)" />
+        </properties>        
+    </Shmoo>
+</Test>
+<!-- This section is just like a normal automation task, defines binaries,etc -->

@@ -21,8 +21,8 @@ int agent_register_check_ack(int cmd, void* param, char* cmd_buf)
 	else
 		return -1;
 }
-/*side A: send cmd agent register*/
-void cmd_agent_register(socket_entry* agent)
+/*side A: send cmd agent register to server*/
+void cmd_agent_register(socket_entry* server)
 {
 	char buf[BUFF_LEN];
 	struct agent_info info;
@@ -33,9 +33,9 @@ void cmd_agent_register(socket_entry* agent)
 	memcpy((void*)info.board_name, "A3900", 5);
 	
 	len=agent_register_cmd_create(CMD_AGENT_REGISTER, (void*)(&info),buf);
-	socket_send(agent, buf,sizeof(struct auto_cmd));
+	socket_send(server, buf,sizeof(struct auto_cmd));
 	
-	socket_recv_ack(agent,buf);
+	socket_recv_ack(server,buf);
 	agent_register_check_ack(CMD_AGENT_REGISTER,NULL,buf);
 }
 

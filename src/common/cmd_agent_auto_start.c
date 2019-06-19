@@ -2,7 +2,7 @@
 
 #include "auto.h"
 #include "socket_control.h"
-void cmd_auto_start(socket_entry* agent,char* script)
+void cmd_agent_auto_start(socket_entry* agent,char* script)
 {
 	char buf[BUFF_LEN];
 	int fd;
@@ -10,7 +10,7 @@ void cmd_auto_start(socket_entry* agent,char* script)
 	int len=0, left_len=0;
 
 		
-	len=socket_cmd_create(CMD_AUTO_START, script,sizeof(struct agent_cmd_script),buf);
+	len=socket_cmd_create(CMD_AGENT_AUTO_START, script,sizeof(struct agent_cmd_script),buf);
 	socket_send(agent, buf,sizeof(struct auto_cmd));
 	
 	socket_recv_ack(agent,buf);
@@ -28,7 +28,7 @@ void cmd_auto_start(socket_entry* agent,char* script)
 */
 }
 
-int cmd_auto_start_handler(socket_entry* entry,char* buf)
+int cmd_agent_auto_start_handler(socket_entry* entry,char* buf)
 {
 	struct auto_cmd* cmd = (struct auto_cmd*)buf;
 	struct agent_cmd_script* script=NULL;
