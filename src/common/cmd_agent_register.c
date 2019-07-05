@@ -3,7 +3,8 @@
 
 #include "auto.h"
 #include "socket_control.h"
-int agent_register_cmd_create(int cmd, void* param, char* cmd_buf)
+//#include "sql_operation.h"
+/*int agent_register_cmd_create(int cmd, void* param, char* cmd_buf)
 {
 	struct agent_info* info = (struct agent_info*)param;
 	struct auto_cmd* tx_cmd = (struct auto_cmd*)cmd_buf;
@@ -20,9 +21,9 @@ int agent_register_check_ack(int cmd, void* param, char* cmd_buf)
 	}
 	else
 		return -1;
-}
+}*/
 /*side A: send cmd agent register to server*/
-void cmd_agent_register(socket_entry* server)
+/*void cmd_agent_register(socket_entry* server)
 {
 	char buf[BUFF_LEN];
 	struct agent_info info;
@@ -37,10 +38,11 @@ void cmd_agent_register(socket_entry* server)
 	
 	socket_recv_ack(server,buf);
 	agent_register_check_ack(CMD_AGENT_REGISTER,NULL,buf);
-}
+}*/
 
 
 /*side B: handle cmd agent register*/
+extern int mysql_routine();
 int cmd_agent_register_handler(socket_entry* entry,char* buf)
 {
 	struct auto_cmd* cmd = (struct auto_cmd*)buf;
@@ -55,6 +57,7 @@ int cmd_agent_register_handler(socket_entry* entry,char* buf)
 	if (info && info->status == AGENT_STATUS_READY ){
 		printf("AGENT is ready\n");
 	}
+	mysql_routine();
 	socket_send_ack(entry,CMD_ACK);
 	return 0;
 }

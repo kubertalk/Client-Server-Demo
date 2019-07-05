@@ -1,0 +1,311 @@
+
+abc:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400760 <_init>:
+  400760:	48 83 ec 08          	sub    $0x8,%rsp
+  400764:	48 8b 05 8d 08 20 00 	mov    0x20088d(%rip),%rax        # 600ff8 <_DYNAMIC+0x1e0>
+  40076b:	48 85 c0             	test   %rax,%rax
+  40076e:	74 05                	je     400775 <_init+0x15>
+  400770:	e8 2b 00 00 00       	callq  4007a0 <__gmon_start__@plt>
+  400775:	48 83 c4 08          	add    $0x8,%rsp
+  400779:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400780 <printf@plt-0x10>:
+  400780:	ff 35 82 08 20 00    	pushq  0x200882(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400786:	ff 25 84 08 20 00    	jmpq   *0x200884(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40078c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400790 <printf@plt>:
+  400790:	ff 25 82 08 20 00    	jmpq   *0x200882(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400796:	68 00 00 00 00       	pushq  $0x0
+  40079b:	e9 e0 ff ff ff       	jmpq   400780 <_init+0x20>
+
+00000000004007a0 <__gmon_start__@plt>:
+  4007a0:	ff 25 7a 08 20 00    	jmpq   *0x20087a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  4007a6:	68 01 00 00 00       	pushq  $0x1
+  4007ab:	e9 d0 ff ff ff       	jmpq   400780 <_init+0x20>
+
+00000000004007b0 <puts@plt>:
+  4007b0:	ff 25 72 08 20 00    	jmpq   *0x200872(%rip)        # 601028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  4007b6:	68 02 00 00 00       	pushq  $0x2
+  4007bb:	e9 c0 ff ff ff       	jmpq   400780 <_init+0x20>
+
+00000000004007c0 <__libc_start_main@plt>:
+  4007c0:	ff 25 6a 08 20 00    	jmpq   *0x20086a(%rip)        # 601030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  4007c6:	68 03 00 00 00       	pushq  $0x3
+  4007cb:	e9 b0 ff ff ff       	jmpq   400780 <_init+0x20>
+
+00000000004007d0 <mysql_real_query@plt>:
+  4007d0:	ff 25 62 08 20 00    	jmpq   *0x200862(%rip)        # 601038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  4007d6:	68 04 00 00 00       	pushq  $0x4
+  4007db:	e9 a0 ff ff ff       	jmpq   400780 <_init+0x20>
+
+00000000004007e0 <mysql_error@plt>:
+  4007e0:	ff 25 5a 08 20 00    	jmpq   *0x20085a(%rip)        # 601040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  4007e6:	68 05 00 00 00       	pushq  $0x5
+  4007eb:	e9 90 ff ff ff       	jmpq   400780 <_init+0x20>
+
+00000000004007f0 <mysql_fetch_row@plt>:
+  4007f0:	ff 25 52 08 20 00    	jmpq   *0x200852(%rip)        # 601048 <_GLOBAL_OFFSET_TABLE_+0x48>
+  4007f6:	68 06 00 00 00       	pushq  $0x6
+  4007fb:	e9 80 ff ff ff       	jmpq   400780 <_init+0x20>
+
+0000000000400800 <mysql_init@plt>:
+  400800:	ff 25 4a 08 20 00    	jmpq   *0x20084a(%rip)        # 601050 <_GLOBAL_OFFSET_TABLE_+0x50>
+  400806:	68 07 00 00 00       	pushq  $0x7
+  40080b:	e9 70 ff ff ff       	jmpq   400780 <_init+0x20>
+
+0000000000400810 <__stack_chk_fail@plt>:
+  400810:	ff 25 42 08 20 00    	jmpq   *0x200842(%rip)        # 601058 <_GLOBAL_OFFSET_TABLE_+0x58>
+  400816:	68 08 00 00 00       	pushq  $0x8
+  40081b:	e9 60 ff ff ff       	jmpq   400780 <_init+0x20>
+
+0000000000400820 <mysql_free_result@plt>:
+  400820:	ff 25 3a 08 20 00    	jmpq   *0x20083a(%rip)        # 601060 <_GLOBAL_OFFSET_TABLE_+0x60>
+  400826:	68 09 00 00 00       	pushq  $0x9
+  40082b:	e9 50 ff ff ff       	jmpq   400780 <_init+0x20>
+
+0000000000400830 <mysql_close@plt>:
+  400830:	ff 25 32 08 20 00    	jmpq   *0x200832(%rip)        # 601068 <_GLOBAL_OFFSET_TABLE_+0x68>
+  400836:	68 0a 00 00 00       	pushq  $0xa
+  40083b:	e9 40 ff ff ff       	jmpq   400780 <_init+0x20>
+
+0000000000400840 <mysql_store_result@plt>:
+  400840:	ff 25 2a 08 20 00    	jmpq   *0x20082a(%rip)        # 601070 <_GLOBAL_OFFSET_TABLE_+0x70>
+  400846:	68 0b 00 00 00       	pushq  $0xb
+  40084b:	e9 30 ff ff ff       	jmpq   400780 <_init+0x20>
+
+0000000000400850 <mysql_real_connect@plt>:
+  400850:	ff 25 22 08 20 00    	jmpq   *0x200822(%rip)        # 601078 <_GLOBAL_OFFSET_TABLE_+0x78>
+  400856:	68 0c 00 00 00       	pushq  $0xc
+  40085b:	e9 20 ff ff ff       	jmpq   400780 <_init+0x20>
+
+Disassembly of section .text:
+
+0000000000400860 <_start>:
+  400860:	31 ed                	xor    %ebp,%ebp
+  400862:	49 89 d1             	mov    %rdx,%r9
+  400865:	5e                   	pop    %rsi
+  400866:	48 89 e2             	mov    %rsp,%rdx
+  400869:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40086d:	50                   	push   %rax
+  40086e:	54                   	push   %rsp
+  40086f:	49 c7 c0 50 0b 40 00 	mov    $0x400b50,%r8
+  400876:	48 c7 c1 e0 0a 40 00 	mov    $0x400ae0,%rcx
+  40087d:	48 c7 c7 4d 09 40 00 	mov    $0x40094d,%rdi
+  400884:	e8 37 ff ff ff       	callq  4007c0 <__libc_start_main@plt>
+  400889:	f4                   	hlt    
+  40088a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400890 <deregister_tm_clones>:
+  400890:	b8 b7 10 60 00       	mov    $0x6010b7,%eax
+  400895:	55                   	push   %rbp
+  400896:	48 2d b0 10 60 00    	sub    $0x6010b0,%rax
+  40089c:	48 83 f8 0e          	cmp    $0xe,%rax
+  4008a0:	48 89 e5             	mov    %rsp,%rbp
+  4008a3:	77 02                	ja     4008a7 <deregister_tm_clones+0x17>
+  4008a5:	5d                   	pop    %rbp
+  4008a6:	c3                   	retq   
+  4008a7:	b8 00 00 00 00       	mov    $0x0,%eax
+  4008ac:	48 85 c0             	test   %rax,%rax
+  4008af:	74 f4                	je     4008a5 <deregister_tm_clones+0x15>
+  4008b1:	5d                   	pop    %rbp
+  4008b2:	bf b0 10 60 00       	mov    $0x6010b0,%edi
+  4008b7:	ff e0                	jmpq   *%rax
+  4008b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000004008c0 <register_tm_clones>:
+  4008c0:	b8 b0 10 60 00       	mov    $0x6010b0,%eax
+  4008c5:	55                   	push   %rbp
+  4008c6:	48 2d b0 10 60 00    	sub    $0x6010b0,%rax
+  4008cc:	48 c1 f8 03          	sar    $0x3,%rax
+  4008d0:	48 89 e5             	mov    %rsp,%rbp
+  4008d3:	48 89 c2             	mov    %rax,%rdx
+  4008d6:	48 c1 ea 3f          	shr    $0x3f,%rdx
+  4008da:	48 01 d0             	add    %rdx,%rax
+  4008dd:	48 d1 f8             	sar    %rax
+  4008e0:	75 02                	jne    4008e4 <register_tm_clones+0x24>
+  4008e2:	5d                   	pop    %rbp
+  4008e3:	c3                   	retq   
+  4008e4:	ba 00 00 00 00       	mov    $0x0,%edx
+  4008e9:	48 85 d2             	test   %rdx,%rdx
+  4008ec:	74 f4                	je     4008e2 <register_tm_clones+0x22>
+  4008ee:	5d                   	pop    %rbp
+  4008ef:	48 89 c6             	mov    %rax,%rsi
+  4008f2:	bf b0 10 60 00       	mov    $0x6010b0,%edi
+  4008f7:	ff e2                	jmpq   *%rdx
+  4008f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400900 <__do_global_dtors_aux>:
+  400900:	80 3d a9 07 20 00 00 	cmpb   $0x0,0x2007a9(%rip)        # 6010b0 <__TMC_END__>
+  400907:	75 11                	jne    40091a <__do_global_dtors_aux+0x1a>
+  400909:	55                   	push   %rbp
+  40090a:	48 89 e5             	mov    %rsp,%rbp
+  40090d:	e8 7e ff ff ff       	callq  400890 <deregister_tm_clones>
+  400912:	5d                   	pop    %rbp
+  400913:	c6 05 96 07 20 00 01 	movb   $0x1,0x200796(%rip)        # 6010b0 <__TMC_END__>
+  40091a:	f3 c3                	repz retq 
+  40091c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400920 <frame_dummy>:
+  400920:	48 83 3d e8 04 20 00 	cmpq   $0x0,0x2004e8(%rip)        # 600e10 <__JCR_END__>
+  400927:	00 
+  400928:	74 1e                	je     400948 <frame_dummy+0x28>
+  40092a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40092f:	48 85 c0             	test   %rax,%rax
+  400932:	74 14                	je     400948 <frame_dummy+0x28>
+  400934:	55                   	push   %rbp
+  400935:	bf 10 0e 60 00       	mov    $0x600e10,%edi
+  40093a:	48 89 e5             	mov    %rsp,%rbp
+  40093d:	ff d0                	callq  *%rax
+  40093f:	5d                   	pop    %rbp
+  400940:	e9 7b ff ff ff       	jmpq   4008c0 <register_tm_clones>
+  400945:	0f 1f 00             	nopl   (%rax)
+  400948:	e9 73 ff ff ff       	jmpq   4008c0 <register_tm_clones>
+
+000000000040094d <main>:
+  40094d:	55                   	push   %rbp
+  40094e:	48 89 e5             	mov    %rsp,%rbp
+  400951:	53                   	push   %rbx
+  400952:	48 81 ec 48 05 00 00 	sub    $0x548,%rsp
+  400959:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  400960:	00 00 
+  400962:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  400966:	31 c0                	xor    %eax,%eax
+  400968:	48 8d 85 d0 fa ff ff 	lea    -0x530(%rbp),%rax
+  40096f:	48 89 c7             	mov    %rax,%rdi
+  400972:	e8 89 fe ff ff       	callq  400800 <mysql_init@plt>
+  400977:	41 b8 ea 0c 00 00    	mov    $0xcea,%r8d
+  40097d:	48 8b 3d 24 07 20 00 	mov    0x200724(%rip),%rdi        # 6010a8 <pDbName>
+  400984:	48 8b 0d 15 07 20 00 	mov    0x200715(%rip),%rcx        # 6010a0 <pPassword>
+  40098b:	48 8b 15 06 07 20 00 	mov    0x200706(%rip),%rdx        # 601098 <pUserName>
+  400992:	48 8b 35 f7 06 20 00 	mov    0x2006f7(%rip),%rsi        # 601090 <pHostName>
+  400999:	48 8d 85 d0 fa ff ff 	lea    -0x530(%rbp),%rax
+  4009a0:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+  4009a7:	00 00 
+  4009a9:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  4009b0:	00 
+  4009b1:	45 89 c1             	mov    %r8d,%r9d
+  4009b4:	49 89 f8             	mov    %rdi,%r8
+  4009b7:	48 89 c7             	mov    %rax,%rdi
+  4009ba:	e8 91 fe ff ff       	callq  400850 <mysql_real_connect@plt>
+  4009bf:	48 85 c0             	test   %rax,%rax
+  4009c2:	75 14                	jne    4009d8 <main+0x8b>
+  4009c4:	bf 8c 0b 40 00       	mov    $0x400b8c,%edi
+  4009c9:	e8 e2 fd ff ff       	callq  4007b0 <puts@plt>
+  4009ce:	b8 00 00 00 00       	mov    $0x0,%eax
+  4009d3:	e9 e3 00 00 00       	jmpq   400abb <main+0x16e>
+  4009d8:	48 8d 85 d0 fa ff ff 	lea    -0x530(%rbp),%rax
+  4009df:	ba 15 00 00 00       	mov    $0x15,%edx
+  4009e4:	be a4 0b 40 00       	mov    $0x400ba4,%esi
+  4009e9:	48 89 c7             	mov    %rax,%rdi
+  4009ec:	e8 df fd ff ff       	callq  4007d0 <mysql_real_query@plt>
+  4009f1:	85 c0                	test   %eax,%eax
+  4009f3:	74 14                	je     400a09 <main+0xbc>
+  4009f5:	bf ba 0b 40 00       	mov    $0x400bba,%edi
+  4009fa:	e8 b1 fd ff ff       	callq  4007b0 <puts@plt>
+  4009ff:	b8 00 00 00 00       	mov    $0x0,%eax
+  400a04:	e9 b2 00 00 00       	jmpq   400abb <main+0x16e>
+  400a09:	48 8d 85 d0 fa ff ff 	lea    -0x530(%rbp),%rax
+  400a10:	48 89 c7             	mov    %rax,%rdi
+  400a13:	e8 28 fe ff ff       	callq  400840 <mysql_store_result@plt>
+  400a18:	48 89 85 c0 fa ff ff 	mov    %rax,-0x540(%rbp)
+  400a1f:	48 83 bd c0 fa ff ff 	cmpq   $0x0,-0x540(%rbp)
+  400a26:	00 
+  400a27:	75 23                	jne    400a4c <main+0xff>
+  400a29:	bf d0 0b 40 00       	mov    $0x400bd0,%edi
+  400a2e:	e8 7d fd ff ff       	callq  4007b0 <puts@plt>
+  400a33:	48 8d 85 d0 fa ff ff 	lea    -0x530(%rbp),%rax
+  400a3a:	48 89 c7             	mov    %rax,%rdi
+  400a3d:	e8 9e fd ff ff       	callq  4007e0 <mysql_error@plt>
+  400a42:	48 89 c7             	mov    %rax,%rdi
+  400a45:	e8 66 fd ff ff       	callq  4007b0 <puts@plt>
+  400a4a:	eb 2c                	jmp    400a78 <main+0x12b>
+  400a4c:	eb 2a                	jmp    400a78 <main+0x12b>
+  400a4e:	48 8b 85 c8 fa ff ff 	mov    -0x538(%rbp),%rax
+  400a55:	48 83 c0 08          	add    $0x8,%rax
+  400a59:	48 8b 10             	mov    (%rax),%rdx
+  400a5c:	48 8b 85 c8 fa ff ff 	mov    -0x538(%rbp),%rax
+  400a63:	48 8b 00             	mov    (%rax),%rax
+  400a66:	48 89 c6             	mov    %rax,%rsi
+  400a69:	bf e8 0b 40 00       	mov    $0x400be8,%edi
+  400a6e:	b8 00 00 00 00       	mov    $0x0,%eax
+  400a73:	e8 18 fd ff ff       	callq  400790 <printf@plt>
+  400a78:	48 8b 85 c0 fa ff ff 	mov    -0x540(%rbp),%rax
+  400a7f:	48 89 c7             	mov    %rax,%rdi
+  400a82:	e8 69 fd ff ff       	callq  4007f0 <mysql_fetch_row@plt>
+  400a87:	48 89 85 c8 fa ff ff 	mov    %rax,-0x538(%rbp)
+  400a8e:	48 83 bd c8 fa ff ff 	cmpq   $0x0,-0x538(%rbp)
+  400a95:	00 
+  400a96:	75 b6                	jne    400a4e <main+0x101>
+  400a98:	48 8b 85 c0 fa ff ff 	mov    -0x540(%rbp),%rax
+  400a9f:	48 89 c7             	mov    %rax,%rdi
+  400aa2:	e8 79 fd ff ff       	callq  400820 <mysql_free_result@plt>
+  400aa7:	48 8d 85 d0 fa ff ff 	lea    -0x530(%rbp),%rax
+  400aae:	48 89 c7             	mov    %rax,%rdi
+  400ab1:	e8 7a fd ff ff       	callq  400830 <mysql_close@plt>
+  400ab6:	b8 00 00 00 00       	mov    $0x0,%eax
+  400abb:	48 8b 5d e8          	mov    -0x18(%rbp),%rbx
+  400abf:	64 48 33 1c 25 28 00 	xor    %fs:0x28,%rbx
+  400ac6:	00 00 
+  400ac8:	74 05                	je     400acf <main+0x182>
+  400aca:	e8 41 fd ff ff       	callq  400810 <__stack_chk_fail@plt>
+  400acf:	48 81 c4 48 05 00 00 	add    $0x548,%rsp
+  400ad6:	5b                   	pop    %rbx
+  400ad7:	5d                   	pop    %rbp
+  400ad8:	c3                   	retq   
+  400ad9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400ae0 <__libc_csu_init>:
+  400ae0:	41 57                	push   %r15
+  400ae2:	41 89 ff             	mov    %edi,%r15d
+  400ae5:	41 56                	push   %r14
+  400ae7:	49 89 f6             	mov    %rsi,%r14
+  400aea:	41 55                	push   %r13
+  400aec:	49 89 d5             	mov    %rdx,%r13
+  400aef:	41 54                	push   %r12
+  400af1:	4c 8d 25 08 03 20 00 	lea    0x200308(%rip),%r12        # 600e00 <__frame_dummy_init_array_entry>
+  400af8:	55                   	push   %rbp
+  400af9:	48 8d 2d 08 03 20 00 	lea    0x200308(%rip),%rbp        # 600e08 <__init_array_end>
+  400b00:	53                   	push   %rbx
+  400b01:	4c 29 e5             	sub    %r12,%rbp
+  400b04:	31 db                	xor    %ebx,%ebx
+  400b06:	48 c1 fd 03          	sar    $0x3,%rbp
+  400b0a:	48 83 ec 08          	sub    $0x8,%rsp
+  400b0e:	e8 4d fc ff ff       	callq  400760 <_init>
+  400b13:	48 85 ed             	test   %rbp,%rbp
+  400b16:	74 1e                	je     400b36 <__libc_csu_init+0x56>
+  400b18:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  400b1f:	00 
+  400b20:	4c 89 ea             	mov    %r13,%rdx
+  400b23:	4c 89 f6             	mov    %r14,%rsi
+  400b26:	44 89 ff             	mov    %r15d,%edi
+  400b29:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  400b2d:	48 83 c3 01          	add    $0x1,%rbx
+  400b31:	48 39 eb             	cmp    %rbp,%rbx
+  400b34:	75 ea                	jne    400b20 <__libc_csu_init+0x40>
+  400b36:	48 83 c4 08          	add    $0x8,%rsp
+  400b3a:	5b                   	pop    %rbx
+  400b3b:	5d                   	pop    %rbp
+  400b3c:	41 5c                	pop    %r12
+  400b3e:	41 5d                	pop    %r13
+  400b40:	41 5e                	pop    %r14
+  400b42:	41 5f                	pop    %r15
+  400b44:	c3                   	retq   
+  400b45:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  400b4c:	00 00 00 00 
+
+0000000000400b50 <__libc_csu_fini>:
+  400b50:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000400b54 <_fini>:
+  400b54:	48 83 ec 08          	sub    $0x8,%rsp
+  400b58:	48 83 c4 08          	add    $0x8,%rsp
+  400b5c:	c3                   	retq   
