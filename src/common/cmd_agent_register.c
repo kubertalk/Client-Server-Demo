@@ -57,7 +57,7 @@ int cmd_agent_register_handler(socket_entry* entry,char* buf)
 	if (info && info->status == AGENT_STATUS_READY ){
 		printf("AGENT is ready\n");
 	}
-	mysql_routine();
+	//mysql_routine(); server mysql interface not used.
 	socket_send_ack(entry,CMD_ACK);
 	return 0;
 }

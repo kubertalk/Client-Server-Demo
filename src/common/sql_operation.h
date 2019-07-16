@@ -9,12 +9,12 @@
 //an instance of a row from results
 //MYSQL_ROW MysqlRow;
 
-// const char *pHostName = "localhost"; //or set remote ip
-// const char *pUserName = "root";
-// const char *pPassword = "guagua";
-// const char *pDbName = "Automation";
-// const unsigned int DbPort = 3306;
+const char *pHostName = "localhost"; //or set remote ip
+const char *pUserName = "root";
+const char *pPassword = "guagua";
+const char *pDbName = "automation";
+const unsigned int DbPort = 3306;
 
-int mysql_routine();
+void mysql_routine();
 
 #endif

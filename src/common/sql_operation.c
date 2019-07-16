@@ -2,16 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "/usr/include/mysql/mysql.h"
-//#include "sql_operation.h"
+#include "sql_operation.h"
 
 
-const char *pHostName = "localhost"; //or set remote ip
-const char *pUserName = "root";
-const char *pPassword = "guagua";
-const char *pDbName = "automation";
-const unsigned int DbPort = 3306;
-
-int mysql_routine()
+void mysql_routine()
 {
     MYSQL mysql;
     MYSQL_RES *res;
@@ -22,13 +16,13 @@ int mysql_routine()
     if( !mysql_real_connect(&mysql, pHostName, pUserName, pPassword, pDbName, DbPort, 0, 0))
     {
         printf("mysql_real_connect fail\n");
-        return 0;
+       
     }
 
     if (mysql_real_query(&mysql, "select * from project", (unsigned long)strlen("select * from project")))
     {
         printf("mysql_real_query fail\n");
-        return 0;
+        ;
     }
 
     res = mysql_store_result(&mysql);
@@ -47,5 +41,4 @@ int mysql_routine()
 
     mysql_close(&mysql);
 
-    return 0;
 }

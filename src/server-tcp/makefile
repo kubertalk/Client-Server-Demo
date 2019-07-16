@@ -16,15 +16,16 @@ SOURCE += ../common/socket_control.c
 SOURCE += ../common/auto_infra.c
 SOURCE += ../common/cmd_agent_auto_start.c
 SOURCE += ../common/cmd_user_task_start.c
-#SOURCE += ../common/sql_operation.c
 
 SQL_SOURCE = ../common/sql_operation.c
 
 SQL_OBJ = $(SQL_SOURCE:.c=.o) 
 OBJS = $(SOURCE:.c=.o) 
-
-server-tcp: $(OBJS) $(SQL_OBJ) 
-	$(CC) $(LDFLAGS) $(SQL_OBJ) $(OBJS) $(SQL_FLAGS) -o $@ 
+#server mysql interface not used
+# server-tcp-mysql: $(OBJS) $(SQL_OBJ) 
+# 	$(CC) $(LDFLAGS) $(OBJS) $(SQL_OBJ) $(SQL_FLAGS) -o $@ 
+server-tcp: $(OBJS)
+	$(CC) $(LDFLAGS) $(OBJS) -o $@ 
 
 .c.o:
 	$(CC) -c $< $(CFLAGS) $(INC_PATH) -o $@ 
